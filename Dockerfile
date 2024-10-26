@@ -1,4 +1,4 @@
-# Use a PHP image as the base
+# Use a PHP 8.0 image as the base
 FROM php:8.0-fpm-alpine
 
 # Set the working directory
@@ -8,7 +8,8 @@ WORKDIR /var/www/html
 COPY composer.json composer.lock ./
 
 # Install dependencies
-RUN composer install
+RUN composer install --no-interaction --no-ansi --no-progress
+
 # Copy the rest of the application code
 COPY . .
 
