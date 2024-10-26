@@ -8,8 +8,7 @@ WORKDIR /var/www/html
 COPY composer.json composer.lock ./
 
 # Install dependencies
-RUN composer install --no-interaction --no-ansi --no-progress
-
+RUN composer install
 # Copy the rest of the application code
 COPY . .
 
